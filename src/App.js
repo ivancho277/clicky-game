@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Navebar from "./Navbar"
+import Jumbotron from "./Jumbotron"
 
 class App extends Component{
   state = {
@@ -15,6 +16,7 @@ class App extends Component{
     return (
       <div className="App">
         <Navebar />
+        <Jumbotron />
       </div>
     );
   }
