@@ -4,12 +4,15 @@ import logo from "./logo.svg";
 import "./App.css";
 import Navebar from "./Navbar"
 import Jumbotron from "./Jumbotron"
+import Images from "../public/images"
 
 class App extends Component{
   state = {
     topScore: 0,
     score: 0
+    
   }
+  
 
 
   render() {
@@ -17,6 +20,8 @@ class App extends Component{
       <div className="App">
         <Navebar />
         <Jumbotron />
+
+
       </div>
     );
   }
