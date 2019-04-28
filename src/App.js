@@ -4,7 +4,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import Navebar from "./Navbar"
 import Jumbotron from "./Jumbotron"
-import Images from "../public/images"
+import characters from "../characters.json"
+//import Images from "../public/images"
 
 class App extends Component{
   state = {
