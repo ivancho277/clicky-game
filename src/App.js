@@ -21,9 +21,12 @@ class App extends Component {
         <Navebar />
         <Jumbotron />
         <div className="cardWrap">
-          {this.state.characters.map((character, i) => {
-            <ImageCard key={character.id} image={character.image} />;
-          })}
+          {this.state.characters.map((character, i) => (
+            <ImageCard
+              key={i}
+              image={character.image}
+               />
+          ))}
         </div>
       </div>
     );
