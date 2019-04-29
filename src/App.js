@@ -12,8 +12,52 @@ class App extends Component {
   state = {
     topScore: 0,
     score: 0,
-    characters
+    characters,
+    clicked: []
   };
+
+  imageClick = event => {
+    const curCharacter = event.target.alt;
+    const hasBeenClicked =
+      this.state.clicked.indexOf(curCharacter) > -1;
+
+//if you click on a fish that has already been selected, the game is reset and cards reordered
+    if (hasBeenClicked) {
+      this.setState({
+        characters: this.state.characters.sort(function(a, b) {
+          return 0.5 - Math.random();
+        }),
+        clicked: [],
+        score: 0
+      });
+        alert("You lose. Play again?");
+
+//if you click on an available fish, your score is increased and cards reordered
+    } else {
+      this.setState({
+          characters: this.state.characters.sort(function(a, b) {
+            return 0.5 - Math.random();
+          }),
+          hasBeenClicked: this.state.clicked.concat(
+            curCharacter
+          ),
+          score: this.state.score + 1
+        },() => {
+          if (this.state.score === 12) {
+            alert("Yay! You Win!");
+            this.setState({
+              characters: this.state.characters.sort(function(a, b) {
+                return 0.5 - Math.random();
+              }),
+              clicked: [],
+              score: 0
+            });
+          }
+        }
+      );
+    }
+  };
+
 
   render() {
     return (
@@ -27,6 +71,7 @@ class App extends Component {
             <ImageCard
               key={i}
               image={character.image}
+              onClick={this.imageClick}
                />
           ))}
         </div>
