@@ -18,10 +18,9 @@ class App extends Component {
 
   imageClick = event => {
     const curCharacter = event.target.alt;
-    const hasBeenClicked =
-      this.state.clicked.indexOf(curCharacter) > -1;
+    const hasBeenClicked = this.state.clicked.indexOf(curCharacter) > -1;
 
-//if you click on a fish that has already been selected, the game is reset and cards reordered
+  
     if (hasBeenClicked) {
       this.setState({
         characters: this.state.characters.sort(function(a, b) {
@@ -30,19 +29,19 @@ class App extends Component {
         clicked: [],
         score: 0
       });
-        alert("You lose. Play again?");
+      alert("You lose. Play again?");
 
-//if you click on an available fish, your score is increased and cards reordered
+  
     } else {
-      this.setState({
+      this.setState(
+        {
           characters: this.state.characters.sort(function(a, b) {
             return 0.5 - Math.random();
           }),
-          hasBeenClicked: this.state.clicked.concat(
-            curCharacter
-          ),
+          hasBeenClicked: this.state.clicked.concat(curCharacter),
           score: this.state.score + 1
-        },() => {
+        },
+        () => {
           if (this.state.score === 12) {
             alert("Yay! You Win!");
             this.setState({
@@ -58,13 +57,10 @@ class App extends Component {
     }
   };
 
-
   render() {
     return (
       <div className="App">
-        <Navebar
-        score={this.state.score}
-        />
+        <Navebar score={this.state.score} />
         <Jumbotron />
         <div className="cardWrap">
           {this.state.characters.map((character, i) => (
@@ -72,7 +68,7 @@ class App extends Component {
               key={i}
               image={character.image}
               onClick={this.imageClick}
-               />
+            />
           ))}
         </div>
       </div>
