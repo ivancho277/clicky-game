@@ -1,3 +1,11 @@
+## A simple memorization game
+The objective is to not click on the same Image twice, and they will shuffle every click.
+
+## Frameworks used
+This is built in react and is my first project to understand the use of class based vs. functional components. Also how React's 
+data flow works with state and props betweem components.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
