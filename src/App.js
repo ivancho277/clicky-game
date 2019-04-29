@@ -43,7 +43,7 @@ class App extends Component {
         },
         () => {
           if (this.state.score === 12) {
-            alert("Yay! You Win!");
+            alert("Winning");
             this.setState({
               characters: this.state.characters.sort(function(a, b) {
                 return 0.5 - Math.random();
