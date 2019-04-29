@@ -18,7 +18,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navebar />
+        <Navebar
+        score={this.state.score}
+        />
         <Jumbotron />
         <div className="cardWrap">
           {this.state.characters.map((character, i) => (

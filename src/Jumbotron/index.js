@@ -8,9 +8,7 @@ const Jumbotron = () => {
             <p className="lead">Click on a futurama picture</p>
             <hr className="my-2" />
             <p>Click a photo, but make sure you dont click the same one twice!</p>
-            <p className="lead">
-                <a className="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
-            </p>
+            
         </div>
     </div>
     );

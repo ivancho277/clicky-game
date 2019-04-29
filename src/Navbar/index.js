@@ -18,15 +18,12 @@ const Navbar = props => {
 
       <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
         <li className="nav-item active">
-          <a className="nav-link" href="#">
-            Home <span className="sr-only">(current)</span>
-          </a>
+          <h3>Your Score: {props.score}|   </h3>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
-            Link
-          </a>
+        <h3>  |High Score: </h3>
         </li>
+
       </ul>
     </nav>
   );
