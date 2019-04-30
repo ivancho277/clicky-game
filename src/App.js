@@ -18,9 +18,9 @@ class App extends Component {
 
   imageClick = event => {
     const curCharacter = event.target.alt;
+    console.log(event)
     const hasBeenClicked = this.state.clicked.indexOf(curCharacter) > -1;
 
-  
     if (hasBeenClicked) {
       this.setState({
         characters: this.state.characters.sort(function(a, b) {
@@ -30,18 +30,15 @@ class App extends Component {
         score: 0
       });
       alert("You lose. Play again?");
-
-  
     } else {
       this.setState(
         {
           characters: this.state.characters.sort(function(a, b) {
             return 0.5 - Math.random();
           }),
-          hasBeenClicked: this.state.clicked.concat(curCharacter),
+          clicked: this.state.clicked.concat(curCharacter),
           score: this.state.score + 1
-        },
-        () => {
+        }, () => {
           if (this.state.score === 12) {
             alert("Winning");
             this.setState({
